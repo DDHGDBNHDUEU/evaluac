@@ -13,10 +13,11 @@ function Content() {
 
     return (
         <>
-            {/* aumentar o disminuir cartas  */}
-            <button onClick={() => setCard(card + 1)}>+</button>
-            <p>{card}</p>
-            <button onClick={() => setCard(card > 0 ? card - 1 : 0)}>-</button>
+            <div>
+                <button onClick={() => setCard(card < 100 ? card + 1 : card)}>+</button>
+                <p >{card}</p>
+                <button onClick={() => setCard(card > 0 ? card - 1 : 0)}>-</button>
+            </div>
             {products.slice(0, card).map((product) => (
                 <Card
                     key={product.id}
@@ -30,3 +31,4 @@ function Content() {
 }
 
 export default Content;
+
